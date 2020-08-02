@@ -1,5 +1,5 @@
 kind: pipeline
-name: MarisaKernel_Building
+name: DRONECI_ERFANGSI
 
 platform:
   os: linux
