@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ROMURL=
-ROMCLASS=
+ROMURL=http://download.h2os.com/OnePlus7/MP/OnePlus7Hydrogen_14.H.26_OTA_026_all_2005131921_07ed821de2814cf6.zip
+ROMCLASS=OxygenOS
 
 tg_upload(){
     curl -s https://api.telegram.org/bot"${BOTTOKEN}"/sendDocument -F document=@"${1}" -F chat_id="${CHATID}"
@@ -16,7 +16,8 @@ log(){
 }
 
 log "Start to setup enviorment"
-apt-get install -y git wget openjdk-8-jdk
+apt-get update
+apt-get install -y git wget curl openjdk-8-jdk
 
 log "Start to clone the ErfanGSI tools"
 git clone --recurse-submodules --depth=1 https://github.com/erfanoabdi/ErfanGSIs.git
