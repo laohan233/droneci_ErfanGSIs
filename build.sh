@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 ROMURL=http://download.h2os.com/OnePlus7/MP/OnePlus7Hydrogen_14.H.26_OTA_026_all_2005131921_07ed821de2814cf6.zip
 ROMCLASS=OxygenOS
 
