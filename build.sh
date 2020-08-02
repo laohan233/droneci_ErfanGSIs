@@ -2,9 +2,6 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
-ROMURL=http://download.h2os.com/OnePlus7/MP/OnePlus7Hydrogen_14.H.26_OTA_026_all_2005131921_07ed821de2814cf6.zip
-ROMCLASS=OxygenOS
-
 tg_upload(){
     curl -s https://api.telegram.org/bot"${BOTTOKEN}"/sendDocument -F document=@"${1}" -F chat_id="${CHATID}"
 }
@@ -19,7 +16,7 @@ log(){
 
 log "Start to setup enviorment"
 apt-get update
-apt-get install -y git wget curl openjdk-8-jdk
+apt-get install -y git wget curl openjdk-8-jdk zip 7z
 
 log "Start to clone the ErfanGSI tools"
 git clone --recurse-submodules --depth=1 https://github.com/erfanoabdi/ErfanGSIs.git
@@ -30,12 +27,12 @@ cd ErfanGSIs
 bash setup.sh
 
 log "Start to build GSI"
-bash url2GSI.sh ${ROMURL} ${ROMCLASS}
+bash url2GSI.sh http://download.h2os.com/OnePlus7/MP/OnePlus7Hydrogen_14.H.26_OTA_026_all_2005131921_07ed821de2814cf6.zip OxygenOS
 
 log "Start to make zip"
-zip -r ${ROMCLASS}.zip /drone/src/ErfanGSIs/output/
+zip -r OXYGENOS.zip /drone/src/ErfanGSIs/output/
 
 log "Start to upload"
-tg_upload ${ROMCLASS}.zip
+tg_upload OXYGENOS.zip
 
 log "Build finish"
