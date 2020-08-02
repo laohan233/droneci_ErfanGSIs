@@ -16,7 +16,7 @@ log(){
 
 log "Start to setup enviorment"
 apt-get update
-apt-get install -y git wget curl openjdk-8-jdk zip p7zip-full
+apt-get install -y git wget curl openjdk-8-jdk zip p7zip-full build-essential libssl-dev libffi-dev python3-dev gawk
 
 log "Start to clone the ErfanGSI tools"
 git clone --recurse-submodules --depth=1 https://github.com/erfanoabdi/ErfanGSIs.git
