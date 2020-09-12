@@ -30,7 +30,7 @@ log "Start to build GSI"
 bash url2GSI.sh http://183.201.201.1/bigota.d.miui.com/V12.0.2.0.QFHCNXM/miui_VIOLET_V12.0.2.0.QFHCNXM_cb92059195_10.0.zip MIUI
 
 log "Start to make zip"
-zip -r  MIUI.zip /drone/src/ErfanGSIs/output/
+zip -r  MIUI12-10-byLaohan.zip /drone/src/ErfanGSIs/output/
 
 log "Start to upload"
 tg_upload MIUI.zip
