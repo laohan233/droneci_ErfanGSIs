@@ -27,12 +27,12 @@ cd ErfanGSIs
 bash setup.sh
 
 log "Start to build GSI"
-bash url2GSI.sh http://download.h2os.com/OnePlus7/MP/OnePlus7Hydrogen_14.H.26_OTA_026_all_2005131921_07ed821de2814cf6.zip OxygenOS
+bash url2GSI.sh http://183.201.201.1/bigota.d.miui.com/V12.0.2.0.QFHCNXM/miui_VIOLET_V12.0.2.0.QFHCNXM_cb92059195_10.0.zip MIUI
 
 log "Start to make zip"
-zip -r OXYGENOS.zip /drone/src/ErfanGSIs/output/
+zip -r  MIUI.zip /drone/src/ErfanGSIs/output/
 
 log "Start to upload"
-tg_upload OXYGENOS.zip
+tg_upload MIUI.zip
 
 log "Build finish"
